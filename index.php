@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_set_cookie_params(86400);
+session_start();
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KD GAME 2</title>
-</head>
+include "i18n.php";
+$pageTitle = "Home";
+include "shared/header.php";?>
 
 <body>
+    <?php echo __("Hello"); ?>
+    <?php if (isset($_SESSION["userid"])): ?>
     <h1>Welcome to the KD GAME 2!</h1>
+    <?php else: ?>
+    <h1>Welcome stranger!</h1>
+    <?php endif;?>
 </body>
 
-</html>
+<?php include "shared/footer.php";?>
