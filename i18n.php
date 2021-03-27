@@ -2,15 +2,17 @@
 
 function __($text)
 {
-    // if (!isset($_SESSION["lang"])) {
-    //     return $text;
-    // }
-    // $lang = $_SESSION["lang"];
-    $lang = "de";
+    if (!isset($_SESSION["lang"])) {
+        return $text;
+    }
+    $lang = $_SESSION["lang"];
 
     $translations = array(
         "de" => array(
             "Hello" => "Hallo",
+            "German" => "Deutsch",
+            "English" => "Englisch",
+            "Language" => "Sprache",
         ),
     );
 

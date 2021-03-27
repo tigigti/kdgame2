@@ -1,3 +1,52 @@
+// Global resets
+html,
 body {
-  background-color: grey;
+  margin: 0;
+  padding: 0;
+}
+
+// Language switcher
+#langSwitcher {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  min-width: 100px;
+  &:hover {
+    cursor: pointer;
+  }
+
+  .dropdown {
+    img {
+      width: 12px;
+      height: 12px;
+      transition: all 0.2s ease;
+    }
+    &.active {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .dropdown-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+  }
+  .language {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 24px;
+    margin: 8px 0;
+    &:hover {
+      cursor: pointer;
+      color: pink;
+    }
+    img {
+      height: 24px;
+      width: 24px;
+      margin-right: 4px;
+    }
+  }
 }
