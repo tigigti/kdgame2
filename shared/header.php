@@ -3,7 +3,7 @@ $_SESSION["lang"] = isset($_GET["lang"]) ? $_GET["lang"] : "en";
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $_SESSION["lang"]; ?>">
 
 <head>
     <meta charset="UTF-8">

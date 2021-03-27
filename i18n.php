@@ -13,6 +13,12 @@ function __($text)
             "German" => "Deutsch",
             "English" => "Englisch",
             "Language" => "Sprache",
+            "Username" => "Benutzername",
+            "Submit" => "Abschicken",
+            "Not registered yet?" => "Noch nicht registriert?",
+            "Register" => "Registrieren",
+            "Login" => "Einloggen",
+            "Welcome to the KD GAME 2" => "Willkommen beim KD GAME 2",
         ),
     );
 
