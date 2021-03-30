@@ -9,7 +9,6 @@ class User
 
     public function __construct($username, $password, $conn)
     {
-        global $conn;
         $this->username = $username;
         $this->password = $password;
         $this->conn = $conn;
@@ -29,5 +28,24 @@ class User
         } else {
             echo __("Account created");
         }
+        $stmt->close();
+    }
+
+    public function login()
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM user WHERE username=?");
+        $stmt->bind_param("s", $this->username);
+        if (!$stmt->execute()) {
+            echo $this->conn->error;
+        } else {
+            $result = $stmt->get_result();
+            if ($result->num_rows == 0) {
+                echo __("User not found");
+            } else {
+                $row = $result->fetch_assoc();
+                echo __("Welcome") . " " . $row["username"];
+            }
+        }
+        $stmt->close();
     }
 }

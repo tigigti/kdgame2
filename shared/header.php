@@ -1,5 +1,7 @@
 <?php
-$_SESSION["lang"] = isset($_GET["lang"]) ? $_GET["lang"] : "en";
+if (isset($_GET["lang"])) {
+    $_SESSION["lang"] = $_GET["lang"];
+}
 ?>
 
 <!DOCTYPE html>

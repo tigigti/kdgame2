@@ -24,6 +24,8 @@ function __($text)
             "Username already exists" => "Benutzername existiert bereits",
             "Could not create account" => "Account konnte nicht erstellt werden",
             "Account created" => "Account erstellt",
+            "User not found" => "Benutzer nicht gefunden",
+            "Welcome" => "Willkommen",
         ),
     );
 

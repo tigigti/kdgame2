@@ -19,6 +19,16 @@ $User = new User($_POST["regUsername"], $_POST["regPassword"], $conn);
 </div>
 <?php endif;?>
 
+<?php if (isset($_POST["logUsername"]) && isset($_POST["logPassword"])): ?>
+<?php
+$User = new User($_POST["logUsername"], $_POST["logPassword"], $conn);
+?>
+<div class="alert-box">
+    <div class="progress-bar"></div>
+    <?php $User->login();?>
+</div>
+<?php endif;?>
+
 <div class="content bg-primary">
     <?php if (isset($_SESSION["userid"])): ?>
     <?php else: ?>
@@ -33,7 +43,7 @@ $User = new User($_POST["regUsername"], $_POST["regPassword"], $conn);
             </div>
             <div class="horizontal-field">
                 <label for="logPassword"><?php echo __("Password"); ?></label>
-                <input required id="logPassword" name="logPassword" type="text"
+                <input required id="logPassword" name="logPassword" type="password"
                     placeholder="<?php echo __("Password"); ?>" />
             </div>
 
