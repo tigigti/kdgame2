@@ -21,6 +21,9 @@ function __($text)
             "Welcome to the KD GAME 2" => "Willkommen beim KD GAME 2",
             "Repeat password" => "Passwort wiederholen",
             "Password" => "Passwort",
+            "Username already exists" => "Benutzername existiert bereits",
+            "Could not create account" => "Account konnte nicht erstellt werden",
+            "Account created" => "Account erstellt",
         ),
     );
 

@@ -168,7 +168,7 @@ form {
   z-index: 99;
   position: fixed;
   bottom: 1rem;
-  width: 250px;
+  width: 300px;
   left: 50%;
   transform: translate(-50%, 0);
   background-color: $truewhite;
@@ -183,7 +183,7 @@ form {
     height: 4px;
     width: 100%;
     background-color: $success;
-    transition: width 4s linear;
+    transition: width 8s linear;
   }
 }
 

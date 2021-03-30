@@ -17,6 +17,17 @@ class User
 
     public function register()
     {
-        echo ("Register: " . $this->username . $this->password);
+        $stmt = $this->conn->prepare("INSERT INTO user(username,password) VALUE (?, ?)");
+        $hashed = password_hash($this->password, PASSWORD_BCRYPT);
+        $stmt->bind_param("ss", $this->username, $hashed);
+        if (!$stmt->execute()) {
+            if ($this->conn->errno == 1062) {
+                echo __("Username already exists");
+            } else {
+                echo __("Could not create account");
+            }
+        } else {
+            echo __("Account created");
+        }
     }
 }

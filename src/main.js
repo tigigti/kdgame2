@@ -25,6 +25,6 @@ window.onload = e => {
     progressBar.style.width = 0;
     setTimeout(() => {
       alertBox.style.display = "none";
-    }, 4000);
+    }, 8000);
   }
 };
