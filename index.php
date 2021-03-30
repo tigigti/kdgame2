@@ -8,13 +8,16 @@ include "db.php";
 $pageTitle = "Home";
 include "shared/header.php";
 
-if (isset($_POST["regUsername"]) && isset($_POST["regPassword"])) {
-    // echo "okay lets try and register";
-}
-// $User = new User("username", "password", $conn);
-// $User->register();
+if (isset($_POST["regUsername"]) && isset($_POST["regPassword"])): ?>
+<?php
+$User = new User($_POST["regUsername"], $_POST["regPassword"], $conn);
 ?>
 
+<div class="alert-box">
+    <div class="progress-bar"></div>
+    <?php $User->register();?>
+</div>
+<?php endif;?>
 
 <div class="content bg-primary">
     <?php if (isset($_SESSION["userid"])): ?>
@@ -60,5 +63,6 @@ if (isset($_POST["regUsername"]) && isset($_POST["regPassword"])) {
     </div>
     <?php endif;?>
 </div>
+
 <script defer src="/dist/index.js" type="text/javascript"></script>
 <?php include "shared/footer.php";?>

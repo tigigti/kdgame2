@@ -1,4 +1,5 @@
 window.onload = e => {
+  const alertBox = document.querySelector(".alert-box");
   // Language switcher logic
   const langSwitcher = document.querySelector("#langSwitcher");
   langSwitcher.addEventListener("click", e => {
@@ -18,4 +19,12 @@ window.onload = e => {
       langSwitcher.submit();
     });
   });
+
+  if (alertBox) {
+    const progressBar = alertBox.querySelector(".progress-bar");
+    progressBar.style.width = 0;
+    setTimeout(() => {
+      alertBox.style.display = "none";
+    }, 4000);
+  }
 };
